@@ -15,5 +15,5 @@ The first one to die twice or lose his tower, loses the game...
 * Make a pull request :)
 
 # Thanks to ...
-* Chris for coming up with junglenationals
+* Chris and Luke for coming up with junglenationals
 * Noya, Perry and everyone at moddota.com for helping me out
