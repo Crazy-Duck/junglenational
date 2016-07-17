@@ -13,3 +13,7 @@ The first one to die twice or lose his tower, loses the game...
 * Start coding
 * Test via workshop tools or in-game by executing `dota_launch_custom_game junglenational dota` in the console
 * Make a pull request :)
+
+# Thanks to ...
+* Chris for coming up with junglenationals
+* Noya, Perry and everyone at moddota.com for helping me out
