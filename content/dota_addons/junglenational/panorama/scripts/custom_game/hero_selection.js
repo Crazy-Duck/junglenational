@@ -87,12 +87,12 @@ var heroes = {
 			{"name":"npc_dota_hero_alchemist", "background":"url('s2r://panorama/images/loadingscreens/dota_keyart_alchemist_loadingscreen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_axe", "background":"url('s2r://panorama/images/loadingscreens/searing_annihilator_loading_screen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_beastmaster", "background":"url('s2r://panorama/images/loadingscreens/chimeras_anger_loading_screen/loadingscreen.vtex')"},
-			{"name":"npc_dota_hero_brewmaster", "background":"url('s2r://panorama/images/loadingscreens/ti6_keyart_brewmaster/loadingscreen_tga.vtex')"},
+			{"name":"npc_dota_hero_brewmaster", "background":"url('s2r://panorama/images/loadingscreens/ti6_keyart_brewmaster/loadingscreen.vtex')"},
 			{"name":"npc_dota_hero_bristleback", "background":"url('s2r://panorama/images/loadingscreens/wrathrunner_loading_screen/loadingscreen.vtex')"},
 			{"name":"npc_dota_hero_centaur", "background":"url('s2r://panorama/images/loadingscreens/lord_of_wilderness_loading_screen/loadingscreen.vtex')"},
 			{"name":"npc_dota_hero_chaos_knight", "background":"url('s2r://panorama/images/loadingscreens/champion_discord_closed_loading_screen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_doom_bringer", "background":"url('s2r://panorama/images/loadingscreens/blazing_lord_loading_screen/loadingscreen_tga.vtex')"},
-			{"name":"npc_dota_hero_dragon_knight", "background":"url('s2r://panorama/images/loadingscreens/scales_of_the_burning_dragon_loading_screen/loadingscreen.vtex')"},
+			{"name":"npc_dota_hero_dragon_knight", "background":"url('s2r://panorama/images/loadingscreens/ascension_loadingscreen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_earth_spirit", "background":"url('s2r://panorama/images/loadingscreens/es_demon_stone/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_earthshaker", "background":"url('s2r://panorama/images/loadingscreens/bindings_dragonforge/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_elder_titan", "background":"url('s2r://panorama/images/loadingscreens/harness_of_the_soulforged_loading_screen/loadingscreen.vtex')"},
@@ -148,7 +148,7 @@ function LoadPicks() {
 	var i = Math.floor(Math.random() * 36);
 	var s = Math.floor(Math.random() * 33);
 	var agility = heroes["agi"][a];
-	var intelligence = heroes["int"][i];
+	var intelligence = heroes["str"][i];
 	var strength = heroes["str"][s];
 	
 	$("#first_pick").style.backgroundImage = agility.background;

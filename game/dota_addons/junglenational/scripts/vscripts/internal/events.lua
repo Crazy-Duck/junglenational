@@ -67,7 +67,7 @@ function JungleNational:_OnEntityKilled( keys )
     DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
     if END_GAME_ON_KILLS and killedUnit:GetDeaths() >= KILLS_TO_END_GAME_FOR_TEAM then
       GameRules:SetSafeToLeave( true )
-      if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS
+      if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
         GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
       else
         GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )

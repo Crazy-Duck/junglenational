@@ -332,7 +332,7 @@ function JungleNational:OnTowerKill(keys)
   local team = keys.teamnumber
   
   GameRules:SetSafeToLeave( true )
-  if team == DOTA_TEAM_GOODGUYS
+  if team == DOTA_TEAM_GOODGUYS then
     GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
   else
     GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
