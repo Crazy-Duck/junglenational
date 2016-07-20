@@ -332,7 +332,11 @@ function JungleNational:OnTowerKill(keys)
   local team = keys.teamnumber
   
   GameRules:SetSafeToLeave( true )
-  GameRules:SetGameWinner( killerPlayer:GetTeam() )
+  if team == DOTA_TEAM_GOODGUYS
+    GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+  else
+    GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+  end  
 end
 
 -- This function is called whenever a player changes there custom team selection during Game Setup 
