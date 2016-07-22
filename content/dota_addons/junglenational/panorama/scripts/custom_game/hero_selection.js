@@ -148,7 +148,7 @@ function LoadPicks() {
 	var i = Math.floor(Math.random() * 36);
 	var s = Math.floor(Math.random() * 33);
 	var agility = heroes["agi"][a];
-	var intelligence = heroes["str"][i];
+	var intelligence = heroes["int"][i];
 	var strength = heroes["str"][s];
 	
 	$("#first_pick").style.backgroundImage = agility.background;
