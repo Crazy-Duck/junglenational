@@ -72,7 +72,6 @@ end
 		- event {table} - A table containing PlayerID and HeroID.
 ]]
 function HeroSelection:HeroSelect( event )
-
 	--If this player has not picked yet give him the hero
 	if HeroSelection.playerPicks[ event.PlayerID ] == nil then
 		HeroSelection.playersPicked = HeroSelection.playersPicked + 1
@@ -89,7 +88,7 @@ function HeroSelection:HeroSelect( event )
 	end
 
 	--Check if all heroes have been picked
-	if HeroSelection.playersPicked >= HeroSelection.numPickers then
+	if HeroSelection.playersPicked >= HeroSelection.numPickers and HeroSelection.TimeLeft > 0 then
 		--End picking
 		HeroSelection.TimeLeft = 0
 		HeroSelection:Tick()
@@ -113,6 +112,7 @@ function HeroSelection:EndPicking()
 		table.insert(assigned, player)
 		HeroSelection:AssignHero( player, hero )
 	end
+	
 	--Delete the assigned players to avoid multiple assignment
 	for i, v in ipairs( assigned ) do
 		HeroSelection.playerPicks[ v ] = nil
