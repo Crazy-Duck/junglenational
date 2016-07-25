@@ -195,7 +195,7 @@ function LoadPlayers() {
  * swap to the hero preview screen. */
 function PlayerPicked( player, hero ) {
 	//Update the player panel
-	playerPanels[player].SetHero( hero );
+	//playerPanels[player].SetHero( hero );
 
 	//Disable the hero button
 	//$('#'+hero).AddClass( "taken" );
