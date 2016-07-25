@@ -20,8 +20,8 @@ end
 ]]
 function HeroSelection:Start()
 	--Figure out which players have to pick
-	 HeroSelection.playerPicks = {}
-	 HeroSelection.numPickers = 0
+	HeroSelection.playerPicks = {}
+	HeroSelection.numPickers = 0
 	for pID = 0, DOTA_MAX_PLAYERS -1 do
 		if PlayerResource:IsValidPlayer( pID ) then
 			HeroSelection.numPickers = self.numPickers + 1
@@ -106,9 +106,16 @@ function HeroSelection:EndPicking()
 	--Stop listening to pick events
 	--CustomGameEventManager:UnregisterListener( self.listener )
 
+	--Keep track of the assigned players and remove them once assigned
+	assigned = {}
 	--Assign the picked heroes to all players that have picked
 	for player, hero in pairs( HeroSelection.playerPicks ) do
+		table.insert(assigned, player)
 		HeroSelection:AssignHero( player, hero )
+	end
+	--Delete the assigned players to avoid multiple assignment
+	for i, v in ipairs( assigned ) do
+		HeroSelection.playerPicks[ v ] = nil
 	end
 
 	--Signal the picking screen to disappear
