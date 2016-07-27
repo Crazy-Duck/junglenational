@@ -65,6 +65,8 @@ function JungleNational:_OnEntityKilled( keys )
 
   if killedUnit:IsRealHero() then 
     DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
+    local killMessage = killedUnit:GetName() .. " was killed by " .. killerEntity:GetName() .. "! " .. killedUnit:GetTimeUntilRespawn() .. " until respawn"
+    Notifications:TopToAll({text=killMessage, duration=3.0, style={color="red"}})
     if END_GAME_ON_KILLS and killedUnit:GetDeaths() >= KILLS_TO_END_GAME_FOR_TEAM then
       GameRules:SetSafeToLeave( true )
       if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
