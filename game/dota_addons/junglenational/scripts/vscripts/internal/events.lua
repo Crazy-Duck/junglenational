@@ -62,9 +62,15 @@ function JungleNational:_OnEntityKilled( keys )
   if keys.entindex_attacker ~= nil then
     killerEntity = EntIndexToHScript( keys.entindex_attacker )
   end
-
+  
   if killedUnit:IsRealHero() then 
-    DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
+    DebugPrint("KILLED, KILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())    
+	Notifications:TopToAll({hero=killedUnit:GetName(), duration=3.0, imagestyle="landscape", duration=3.0})
+	Notifications:TopToAll({text=" was killed ", style={color="red"}, continue=true})
+	if killerEntity:IsRealHero() then 
+	  Notifications:TopToAll({text=" by ", style={color="red"}, continue=true})
+	  Notifications:TopToAll({hero=killerEntity:GetName(), imagestyle="landscape", continue=true})
+	end
     if END_GAME_ON_KILLS and killedUnit:GetDeaths() >= KILLS_TO_END_GAME_FOR_TEAM then
       GameRules:SetSafeToLeave( true )
       if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
