@@ -47,7 +47,7 @@ var heroes = {
 			{"name":"npc_dota_hero_ursa", "background":"url('s2r://panorama/images/loadingscreens/ursa_cryogenic_embrace_loadscreen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_vengefulspirit", "background":"url('s2r://panorama/images/loadingscreens/forsaken_wings_loading_screen/loadingscreen.vtex')"},
 			{"name":"npc_dota_hero_weaver", "background":"url('s2r://panorama/images/loadingscreens/envisioning_weaver_loading_screen/loadingscreen_tga.vtex')"}],
-	"int": [{"name":"npc_dota_hero_bane", "background":"url('s2r://panorama/images/loadingscreens/heir_of_terror_loading_screen/loadingscreen.vtex')"},
+	"int": [{"name":"npc_dota_hero_bane", "background":"url('s2r://panorama/images/loadingscreens/heir_of_terror_loadin_screen/loadingscreen.vtex')"},
 			{"name":"npc_dota_hero_batrider", "background":"url('s2r://panorama/images/loadingscreens/marauding_pyro_loading_screen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_crystal_maiden", "background":"url('s2r://panorama/images/loadingscreens/crystalline_comet_loading_screen/loadingscreen_tga.vtex')"},
 			{"name":"npc_dota_hero_dark_seer", "background":"url('s2r://panorama/images/loadingscreens/forgotten_tactician_loading_screen/loadingscreen.vtex')"},
@@ -128,6 +128,7 @@ function OnPickingDone( data ) {
 	$("#EnterGameBtn").RemoveClass( "disabled" );
 	$("#EnterGameBtnTxt").text = "Enter Game";
 	canEnter = true;
+	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, true );
 }
 
 /* Visual timer update */
